@@ -1,7 +1,7 @@
 from typing import Optional, List
 from pydantic import BaseModel
 
-from src.apicloudru.models.base import CommonInfo, Inquiry
+from .base import CommonInfo, Inquiry
 
 
 class FSSPRecord(BaseModel):
@@ -21,9 +21,9 @@ class FSSPRecord(BaseModel):
 
 
 class FSSPPhysicalSearch(CommonInfo):
-    countAll: Optional[str] = 0
+    countAll: Optional[str] = '0'
     pagesAll: Optional[int] = 0
-    totalLoadedPage: Optional[str] = 0
-    onlyActual: Optional[bool]
+    totalLoadedPage: Optional[str] = '0'
+    onlyActual: Optional[bool] = None
     records: Optional[List[FSSPRecord]] = None
     inquiry: Inquiry
